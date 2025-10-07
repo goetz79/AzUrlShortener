@@ -26,7 +26,7 @@ var manAPI = builder.AddProject<Projects.Cloud5mins_ShortenerTools_Api>("api")
 						.WaitFor(strTables)
 						.WithEnvironment("CustomDomain",customDomain)
 						.WithEnvironment("DefaultRedirectUrl",defaultRedirectUrl);
-						//.WithExternalHttpEndpoints(); // If you want to access the API directly
+						.WithExternalHttpEndpoints(); // If you want to access the API directly
 
 builder.AddProject<Projects.Cloud5mins_ShortenerTools_TinyBlazorAdmin>("admin")
 		.WithExternalHttpEndpoints()
