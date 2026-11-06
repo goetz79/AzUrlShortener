@@ -7,10 +7,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
 
+builder.Services.AddTransient<ApiAuthenticationHandler>();
+
 builder.Services.AddHttpClient<UrlManagerClient>(client => 
             {
                 client.BaseAddress = new Uri("https+http://api");
-            });
+            })
+            .AddHttpMessageHandler<ApiAuthenticationHandler>();
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
@@ -42,3 +45,4 @@ app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
 app.Run();
+

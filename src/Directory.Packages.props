@@ -1,6 +1,7 @@
 <Project>
   <ItemGroup>
     <!-- API -->
+    <PackageVersion Include="Azure.Identity" Version="1.21.0" />
     <PackageVersion Include="Cronos" Version="0.13.0" />
     <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="10.0.11" />
     <!-- AppHost -->
